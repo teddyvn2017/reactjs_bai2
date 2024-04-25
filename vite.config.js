@@ -1,7 +1,14 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// vite.config.js
+import { defineConfig } from 'vite';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1/clean_furniture/', // Địa chỉ máy chủ cần proxy đến
+        changeOrigin: true,
+        secure: false // Nếu máy chủ không sử dụng HTTPS, thiết lập secure thành false
+      }
+    }
+  }
+});

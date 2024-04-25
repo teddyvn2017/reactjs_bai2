@@ -1,3 +1,4 @@
+import React from 'react'
 import ghe from '../assets/img/ghe1.png'
 const Three = () => {
     return (
