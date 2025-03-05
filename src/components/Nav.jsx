@@ -91,10 +91,10 @@ const Nav = () => {
                         <ul className="hidden gap-10 text-mau_trang md:flex md:flex-row text-base">
                           
                             <CustomLink href="/">Home</CustomLink>
-                            <CustomLink href="/aboutus">About us</CustomLink>
+                            <CustomLink href="/about-us">About us</CustomLink>
                             <CustomLink href="/services">Services</CustomLink>
                             <CustomLink href="/blog">Blog</CustomLink>
-                            <CustomLink href="/contactus">Contact us</CustomLink>
+                            <CustomLink href="/contact-us">Contact us</CustomLink>
                         </ul>
                         
                     {/* <Button Humberger /> */}

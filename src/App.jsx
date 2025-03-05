@@ -1,46 +1,32 @@
-import React from 'react'
-import { Component, useState } from 'react'
-import './App.css'
-//import { BrowserRouter as Router,Routes, Route} from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
 
-import LoginPage from './pages/LoginPage';
-import Footer from './components/Footer'
 import HomePage from './pages/HomePage';
 import AboutUsPage from './pages/AboutUsPage';
 import BlogPage from './pages/BlogPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactUsPage from './pages/ContactUsPage';
+import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
-import NavOnly from './components/NavOnly';
+import CartPage from './pages/CartPage';
 
 function App() {
-  
-  let component
-
-  switch(window.location.pathname){
-    case '/':
-    case '/home': component = <HomePage />; 
-                  break;
-    case '/about-us': component = <AboutUsPage />; break;
-    case '/blog': component= <BlogPage />; break;
-    case '/services': component= <ServicesPage/>; break;
-    case '/contact-us': component= <ContactUsPage/>; break;
-    case '/dang-nhap': component= <LoginPage/>; break;
-    case '/dang-ky': component= <RegisterPage/>; break;
-    
-  }
-
-  //console.log('component', component)
-  	return (
-   
-		<>    
-			{/* condition ? result1 : result2     */}
-			{
-			window.location.pathname === '/' || window.location.pathname === '/home' ? (
-			<>{component}</>) : (<><NavOnly />{component}<Footer /> </>)
-			}                    
-		</>
-  	)
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/about-us" element={<AboutUsPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/contact-us" element={<ContactUsPage />} />
+        <Route path="/dang-nhap" element={<LoginPage />} />
+        <Route path="/dang-ky" element={<RegisterPage />} />
+        <Route path="/gio-hang" element={<CartPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

@@ -9,4 +9,4 @@ const SuccessNotification = ({ message }) => {
   );
 };
 
-export default SuccessNotification;
+export default SuccessNotification; //React + Vite

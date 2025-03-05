@@ -37,8 +37,8 @@ const RegisterPage = () => {
         try {
             //gọi API
             const response = await axios.post('/api/dang-ky', { username, password });
-            if (response.data === true) {
-              
+           
+            if (response.data === true) {              
                 // Xử lý khi API request thành công, hiển thị thông báo
                 setSavedSuccessfully(true);
                

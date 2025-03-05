@@ -6,7 +6,7 @@ import { useRef } from 'react';
 import { BsPersonCircle ,BsBag   } from "react-icons/bs";
 import Hero from './Hero';
 import {gsap} from "gsap";
-// import HomePage from '../pages/HomePage';
+import CustomLink from './CustomLink';
 // import LoginPage from '../pages/LoginPage';
 // import { Link } from 'react-router';
 //import { useGSAP } from "@gsap/react";
@@ -90,11 +90,11 @@ const Nav = () => {
                         </h1>
                         <ul className="hidden gap-10 text-mau_trang md:flex md:flex-row text-base">
                           
-                            <CustomLink href="/">Home</CustomLink>
-                            <CustomLink href="/aboutus">About us</CustomLink>
-                            <CustomLink href="/services">Services</CustomLink>
-                            <CustomLink href="/blog">Blog</CustomLink>
-                            <CustomLink href="/contactus">Contact us</CustomLink>
+                            <CustomLink to="/">Home</CustomLink>
+                            <CustomLink to="/about-us">About us</CustomLink>
+                            <CustomLink to="/services">Services</CustomLink>
+                            <CustomLink to="/blog">Blog</CustomLink>
+                            <CustomLink to="/contact-us">Contact us</CustomLink>
                         </ul>
                         
                     {/* <Button Humberger /> */}
@@ -140,7 +140,7 @@ const Nav = () => {
                             </a>
                             <a href="/gio-hang">
                                 <BsBag />
-                            </a>
+                            </a>              
                         </div>
                     </div>
                     
@@ -149,19 +149,19 @@ const Nav = () => {
   )
 }
 
-function CustomLink({href, children, ...props }) {
+// function CustomLink({href, children, ...props }) {
 
-    //lấy đường dẫn hiện tại
-    const path = window.location.pathname    
-    console.log(path)
-    return (
+//     //lấy đường dẫn hiện tại
+//     const path = window.location.pathname    
+//     console.log(path)
+//     return (
 
-        // condition ? result1 : result2
-        <li className={path === href ? 'nav__link active' : 'nav__link'}>
-            <a href={href} {...props}>{children}</a>
-        </li>
-    )
-}
+//         // condition ? result1 : result2
+//         <li className={path === href ? 'nav__link active' : 'nav__link'}>
+//             <a href={href} {...props}>{children}</a>
+//         </li>
+//     )
+// }
 
 export default Nav
 
